@@ -1,8 +1,12 @@
 {
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/"
-        }
-    ]
+  "rewrites": [
+    {
+      "source": "/chat_search",
+      "destination": "https://hackathon-finder-ooq8.onrender.com/chat_search"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
