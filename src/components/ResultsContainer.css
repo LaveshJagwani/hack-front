@@ -1,0 +1,122 @@
+.results-container-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    /* max-width removed as wrapper handles it */
+    /* margin removed as wrapper handles it */
+    padding: 1rem 0;
+}
+
+.results-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.error {
+    color: var(--error-color);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* New Styles */
+.sources-display {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Centered content */
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+    /* Full width to allow centering */
+}
+
+.sources-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.sources-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.source-chip {
+    background-color: var(--source-color, #646cff);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.load-more-container {
+    display: flex;
+    justify-content: center;
+    padding: 32px 0 48px;
+}
+
+.load-more-btn {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.load-more-btn:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.load-more-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}

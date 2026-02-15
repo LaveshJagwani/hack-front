@@ -1,0 +1,237 @@
+.hackathon-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+/* Horizontal layout for larger screens */
+@media (min-width: 640px) {
+    .hackathon-card {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+    }
+}
+
+.hackathon-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary-color);
+}
+
+.hackathon-card.status-green {
+    border-left: 4px solid #10b981;
+}
+
+.hackathon-card.status-yellow {
+    border-left: 4px solid #f59e0b;
+}
+
+.hackathon-card.status-blue {
+    border-left: 4px solid #3b82f6;
+}
+
+.hackathon-card.status-gray {
+    border-left: 4px solid #9ca3af;
+}
+
+.hackathon-card.status-red {
+    border-left: 4px solid #ef4444;
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-width: 140px;
+    /* Increased to accommodate badges */
+}
+
+.badges-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+
+.source-badge {
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.status-badge {
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-badge.green {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.status-badge.yellow {
+    background-color: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.status-badge.blue {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.status-badge.red {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.status-badge.gray {
+    background-color: rgba(107, 114, 128, 0.2);
+    color: #9ca3af;
+    border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+.source-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+}
+
+@media (min-width: 640px) {
+    .card-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+}
+
+.hackathon-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.hackathon-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem 0;
+    color: var(--text-primary);
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hackathon-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.meta-item svg {
+    opacity: 0.7;
+}
+
+.card-actions {
+    min-width: 140px;
+}
+
+.view-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+    background: var(--bg-color);
+    color: var(--text-primary);
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.view-button:hover {
+    background: var(--text-primary);
+    color: var(--bg-color);
+    border-color: transparent;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 639px) {
+    .card-top {
+        margin-bottom: 0.75rem;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .badges-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .hackathon-name {
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .hackathon-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .card-actions {
+        width: 100%;
+    }
+
+    .view-button {
+        width: 100%;
+    }
+}
